@@ -3,5 +3,5 @@
 
 
 使用：
-# ./ls [file_name][directory_name] [-R]
+\# ./ls [file_name][directory_name] [-R]
 // -R表示递归地显示目录
