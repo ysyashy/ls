@@ -12,6 +12,8 @@
 #include <string.h>
 #include <time.h>
 #include <unistd.h>
+#include <pwd.h>
+#include <grp.h>
 
 
 class Ls
@@ -23,9 +25,9 @@ protected:
     char *real_name(char *full_name);
     void list_file(struct stat sb, char *name)
     {
-        printf("%s %02d %8d %s %s\n",
-               file_mod(sb.st_mode), sb.st_nlink, sb.st_size, time2str(sb.st_mtim.tv_sec)
-                , name);
+        printf("%s %3d %5s %5s %8d %s %s\n",
+               file_mod(sb.st_mode), sb.st_nlink, getpwuid(sb.st_uid)->pw_name, getgrgid(sb.st_gid)->gr_name,
+               sb.st_size, time2str(sb.st_mtim.tv_sec), name);
     }
     virtual void list_dir() = 0;
 public:
