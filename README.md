@@ -3,5 +3,15 @@
 
 
 使用：
-\# ./ls [file_name][directory_name] [-R]
+
+
+```
+# git clone https://github.com/ysyashy/bash.git
+# cd bash
+# cmake & make
+
+# ./ls [file_name][directory_name] [-R]
 // -R表示递归地显示目录
+
+# ls / -R
+```
